@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     ginbin (0.1.0)
+      tty-prompt
 
 GEM
   remote: https://rubygems.org/
@@ -11,6 +12,8 @@ GEM
     parallel (1.22.1)
     parser (3.1.2.0)
       ast (~> 2.4.1)
+    pastel (0.8.0)
+      tty-color (~> 0.5)
     rainbow (3.1.1)
     rake (13.0.6)
     regexp_parser (2.5.0)
@@ -46,7 +49,18 @@ GEM
     standard (1.12.1)
       rubocop (= 1.29.1)
       rubocop-performance (= 1.13.3)
+    tty-color (0.6.0)
+    tty-cursor (0.7.1)
+    tty-prompt (0.23.1)
+      pastel (~> 0.8)
+      tty-reader (~> 0.8)
+    tty-reader (0.9.0)
+      tty-cursor (~> 0.7)
+      tty-screen (~> 0.8)
+      wisper (~> 2.0)
+    tty-screen (0.8.1)
     unicode-display_width (2.1.0)
+    wisper (2.0.1)
 
 PLATFORMS
   x86_64-darwin-21

@@ -1,3 +1,6 @@
 #!/usr/bin/env ruby
 
 require "ginbin"
+
+menu = Ginbin::Menu.new
+menu.call

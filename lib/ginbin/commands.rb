@@ -16,6 +16,7 @@ module Ginbin
     end
 
     def local_commads
+      return [] if at_home?
       return [] unless File.exists? '.ginbin.yml'
       YAML.load_file('.ginbin.yml')["commands"]
     end
@@ -24,6 +25,10 @@ module Ginbin
       return [] unless File.exists? File.join(Dir.home, '.ginbin.yml')
 
       YAML.load_file(File.join(Dir.home, '.ginbin.yml'))["commands"]
+    end
+
+    def at_home?
+      Dir.getwd == Dir.home
     end
   end
 end

@@ -7,7 +7,7 @@ module Ginbin
     def call
       prompt = TTY::Prompt.new
 
-      prompt.enum_select("Select an editor?", choices).call
+      prompt.enum_select("Choose command", choices).call
     end
 
     def choices

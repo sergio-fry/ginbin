@@ -1,37 +1,34 @@
 # Ginbin
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ginbin`. To experiment with that code, run `bin/console` for an interactive prompt.
+Build interactive menu from most used shell commands.
 
-TODO: Delete this and the text above, and describe your gem
+## Install
 
-## Installation
-
-Install the gem and add to the application's Gemfile by executing:
-
-    $ bundle add ginbin
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install ginbin
+```bash
+gem install ginbin
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+Create config ~/.ginbin.yml:
 
-## Development
+```yaml
+commands:
+  - title: "Connect to server"
+    cmd: ssh my-server.com -t "cd /opt/app && bash -l"
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+  - title: "Build report"
+    cmd: /usr/bin/report
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+  # short command desc without titlwe
+  - echo `date`
 
-## Contributing
+  - menu: Submenu
+    commands:
+      - echo 1
+      - echo 2
+```
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/sergio-fry/ginbin. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/sergio-fry/ginbin/blob/master/CODE_OF_CONDUCT.md).
+Then run `ginbin`
 
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the Ginbin project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/sergio-fry/ginbin/blob/master/CODE_OF_CONDUCT.md).
+It is also possible to have project-specific commands. Just put another .ginbin.yml inside current dir.

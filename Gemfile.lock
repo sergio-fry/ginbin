@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ginbin (0.1.0)
+    ginbin (1.0.0)
       tty-prompt
 
 GEM

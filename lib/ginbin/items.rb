@@ -2,26 +2,26 @@ require "ginbin/command"
 require 'yaml'
 
 module Ginbin
-  class Commands
+  class Items
     include Enumerable 
 
     def each
-      (local_commads + home_commads).each do |command_desc|
-        if command_desc['title'].nil?
-          yield Command.new(cmd: command_desc, title: command_desc)
+      (local_items + home_items).each do |item|
+        if item['title'].nil?
+          yield Command.new(cmd: item, title: item)
         else
-          yield Command.new(cmd: command_desc['cmd'], title: command_desc['title'])
+          yield Command.new(cmd: item['cmd'], title: item['title'])
         end
       end
     end
 
-    def local_commads
+    def local_items
       return [] if at_home?
       return [] unless File.exists? '.ginbin.yml'
       YAML.load_file('.ginbin.yml')["commands"]
     end
 
-    def home_commads
+    def home_items
       return [] unless File.exists? File.join(Dir.home, '.ginbin.yml')
 
       YAML.load_file(File.join(Dir.home, '.ginbin.yml'))["commands"]

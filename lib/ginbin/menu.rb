@@ -1,6 +1,6 @@
 require "tty-prompt"
 
-require_relative "commands"
+require_relative "items"
 
 module Ginbin
   class Menu
@@ -11,13 +11,13 @@ module Ginbin
     end
 
     def choices
-      commands.map do |command|
+      items.map do |command|
         { name: command.title, value: command }
       end
     end
 
-    def commands
-      Commands.new
+    def items
+      Items.new
     end
   end
 end

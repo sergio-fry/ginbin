@@ -27,6 +27,12 @@ commands:
     commands:
       - echo 1
       - echo 2
+
+      - menu: Sub Sumenu
+        commands:
+          - ssh server1
+          - ssh server2
+
 ```
 
 Then run `ginbin`

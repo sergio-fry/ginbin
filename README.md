@@ -33,6 +33,10 @@ commands:
           - ssh server1
           - ssh server2
 
+          # any command could have a title
+          - title: Main server
+            cmd: ssh server-main
+
 ```
 
 Then run `ginbin`

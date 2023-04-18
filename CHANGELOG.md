@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+* replace deprecated `File.exists?`
+
 ## [1.0.0] - 2022-08-29
 
 * submenu 
